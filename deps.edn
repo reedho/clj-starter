@@ -1,3 +1,4 @@
 {:paths ["src"]
  :deps  {org.clojure/clojure {:mvn/version "1.10.3"}
-         ring/ring           {:mvn/version "1.9.2"}}}
+         ring/ring           {:mvn/version "1.9.2"}
+         compojure/compojure {:mvn/version "1.6.2"}}}
