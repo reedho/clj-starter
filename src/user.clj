@@ -26,6 +26,24 @@
   (compojure.route/not-found "Page not found"))
 
 
+(def _server nil)
+
+(defn stop-web-server []
+  ;; Stop only if necessary
+  (when _server
+    (.stop _server)
+    (alter-var-root #'_server (constantly nil))))
+
+(defn start-web-server []
+  ;; Start
+  (alter-var-root #'_server
+                  (constantly (jetty/run-jetty app-route {:port 3330 :join? false}))))
+
+(defn restart-web-server []
+  (stop-web-server)
+  (start-web-server))
+
+
 (comment
   ;; Start jetty web server
   (def _server
