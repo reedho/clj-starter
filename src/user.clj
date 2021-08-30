@@ -37,7 +37,7 @@
 (defn start-web-server []
   ;; Start
   (alter-var-root #'_server
-                  (constantly (jetty/run-jetty app-route {:port 3330 :join? false}))))
+                  (constantly (jetty/run-jetty #'app-route {:port 3330 :join? false}))))
 
 (defn restart-web-server []
   (stop-web-server)
