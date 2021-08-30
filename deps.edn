@@ -1,4 +1,8 @@
 {:paths ["src"]
  :deps  {org.clojure/clojure {:mvn/version "1.10.3"}
          ring/ring           {:mvn/version "1.9.2"}
-         compojure/compojure {:mvn/version "1.6.2"}}}
+         compojure/compojure {:mvn/version "1.6.2"}
+
+         ;; db stuff
+         com.github.seancorfield/next.jdbc {:mvn/version "1.1.646"}
+         org.xerial/sqlite-jdbc            {:mvn/version "3.34.0"}}}
